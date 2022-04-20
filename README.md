@@ -44,3 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## API
+
+https://v2.jokeapi.dev/
+
+## API url to use
+
+Make sure all calls to the API use the safe-mode parameter described here https://jokeapi.dev/#safe-mode
