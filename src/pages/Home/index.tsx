@@ -1,24 +1,18 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import Joke, { TJoke } from '../../components/joke';
-import { API_URL } from '../../constant';
+import { useContext } from 'react';
+import Joke from '../../components/joke';
+import  { AppContext, AppProvider } from '../../context';
 
 function Home() {
-  const [joke, setJoke] = useState<TJoke>();
+  const { state: { joke } } = useContext(AppContext);
 
-  useEffect(() => {
-    if (!joke) {
-      axios.get<TJoke>(API_URL).then(({ data }) => {
-        console.log(data);
-        setJoke(data);
-      });
-    }
-  }, [joke]);
+  console.log(joke)
   
   return (
-    <div className="homeContainer">
-      <Joke setup={joke?.setup} delivery={joke?.delivery} joke={joke?.joke} />
-    </div>
+    <AppProvider>
+      <div className="homeContainer">
+        <Joke />
+      </div>
+    </AppProvider>
   );
 }
 
